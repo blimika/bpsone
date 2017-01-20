@@ -6,7 +6,22 @@
 					include 'page/pegawai/peg_pokok.php';
 				}
 				elseif ($act=='pns') {
-
+					include 'page/pegawai/peg_pns.php';	
+				}
+				elseif ($act=='honorer') {
+					include 'page/pegawai/peg_honorer.php';	
+				}
+				elseif ($act=='edit') {
+					include 'page/pegawai/peg_form_edit.php';
+				}
+				elseif ($act=='update') {
+					include 'page/pegawai/peg_update.php';
+				}
+				elseif ($act=='editpns') {
+					include 'page/pegawai/peg_form_editpns.php';
+				}
+				elseif ($act=='updatepns') {
+					include 'page/pegawai/peg_update_pns.php';
 				}
 				elseif ($act=='view') {
 					include 'page/pegawai/peg_view.php';

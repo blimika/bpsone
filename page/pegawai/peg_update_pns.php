@@ -18,14 +18,14 @@ if ($_POST['submit_pegawai']) {
 	$sql_pegawai= $conn -> query("select * from peg_pns where peg_id='$pegawai_id'");
 	$cek=$sql_pegawai -> num_rows;
 	if ($cek>0) {
-		echo 'ERROR : NIP '.$pegawai_id.' ('.$pegawai_nip.') sudah tersedia';
-	}
-	else {
-		 $sql_peg_save = $conn -> query("insert into peg_pns(peg_id,peg_nip,peg_nip_lama,peg_gol_cpns,peg_tmt_cpns,peg_gol_pns,peg_tmt_pns,peg_jabatan,peg_tmt_jabatan,peg_pendidikan) values('$pegawai_id','$pegawai_nip','$pegawai_nip_lama','$pegawai_gol_cpns','$pegawai_tmt_cpns','$pegawai_gol_pns','$pegawai_tmt_pns','$pegawai_jabatan','$pegawai_tmt_jabatan','$pegawai_pendidikan')") or die(mysqli_error($conn));
+		$sql_peg_update = $conn -> query("update peg_pns set peg_nip='$pegawai_nip', peg_nip_lama='$pegawai_nip_lama',peg_gol_cpns='$pegawai_gol_cpns',peg_tmt_cpns='$pegawai_tmt_cpns', peg_gol_pns='$pegawai_gol_pns', peg_tmt_pns='$pegawai_tmt_pns', peg_jabatan='$pegawai_jabatan', peg_pendidikan='$pegawai_pendidikan' where peg_id='$pegawai_id'") or die(mysqli_error($conn));
 		 //$peg_id=get_peg_id($pegawai_user_no);
 		 $sql_update_peg= $conn->query("update m_pegawai set peg_diupdate_oleh='$created',peg_diupdate_waktu='$waktu_lokal' where peg_id='$pegawai_id'");
-		 if ($sql_peg_save) echo 'SUCCESS : data pegawai berhasil disimpan';
+		 if ($sql_peg_update) echo 'SUCCESS : data pegawai berhasil disimpan';
 		 else echo 'ERROR : data tidak bisa disimpan';
+	}
+	else {
+		echo 'ERROR : NIP '.$pegawai_id.' ('.$pegawai_nip.') tidak tersedia';
 	}
 	$conn -> close();
 

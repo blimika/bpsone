@@ -1,6 +1,5 @@
-# balentb
-Sistem Monitoring Kegiatan BPS Provinsi NTB
-adalah sebuah sistem yang berfungsi untuk memonitoring semua kegiatan BPS disatu Provinsi,
-memberikan peringkat dan penilaian BPS Kabupaten/Kota sesuai capaian kerjanya.
+# bpsone
+Sistem Terpadu BPS Provinsi NTB
+adalah sebuah sistem yang berfungsi untuk semua kegiatan BPS Provinsi NTB,
 
-target soft launching beta version Januari 2017
+target soft launching beta version Maret 2017
