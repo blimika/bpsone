@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2017 at 09:32 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.21
+-- Generation Time: Jan 22, 2017 at 05:48 PM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `ntbsatu`
@@ -26,10 +26,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `ckp_satuan`
 --
 
-CREATE TABLE `ckp_satuan` (
-  `ckp_sat_id` int(2) NOT NULL,
+CREATE TABLE IF NOT EXISTS `ckp_satuan` (
+`ckp_sat_id` int(2) NOT NULL,
   `ckp_sat_nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ckp_satuan`
@@ -57,7 +57,7 @@ INSERT INTO `ckp_satuan` (`ckp_sat_id`, `ckp_sat_nama`) VALUES
 -- Table structure for table `m_gol`
 --
 
-CREATE TABLE `m_gol` (
+CREATE TABLE IF NOT EXISTS `m_gol` (
   `gol_kode` int(2) NOT NULL,
   `gol_nama` varchar(5) NOT NULL,
   `gol_jabatan` varchar(30) NOT NULL
@@ -92,8 +92,8 @@ INSERT INTO `m_gol` (`gol_kode`, `gol_nama`, `gol_jabatan`) VALUES
 -- Table structure for table `m_pegawai`
 --
 
-CREATE TABLE `m_pegawai` (
-  `peg_id` int(8) NOT NULL,
+CREATE TABLE IF NOT EXISTS `m_pegawai` (
+`peg_id` int(8) NOT NULL,
   `peg_user_no` int(8) NOT NULL,
   `peg_nik` varchar(18) NOT NULL,
   `peg_nama` varchar(100) NOT NULL,
@@ -111,19 +111,18 @@ CREATE TABLE `m_pegawai` (
   `peg_status` int(1) DEFAULT NULL,
   `peg_unitkode` int(5) NOT NULL,
   `peg_jenis` int(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `m_pegawai`
 --
 
 INSERT INTO `m_pegawai` (`peg_id`, `peg_user_no`, `peg_nik`, `peg_nama`, `peg_panggilan`, `peg_jk`, `peg_status_peg`, `peg_kawin`, `peg_tempat_lahir`, `peg_tgl_lahir`, `peg_agama`, `peg_dibuat_oleh`, `peg_dibuat_waktu`, `peg_diupdate_oleh`, `peg_diupdate_waktu`, `peg_status`, `peg_unitkode`, `peg_jenis`) VALUES
-(3, 4, '5272031903820005', 'I PUTU DYATMIKA', 'MIKA', 1, 2, 2, 'MATARAM', '1982-03-19', 4, 1, '2017-01-18 16:38:49', 4, '2017-01-19 09:33:54', 1, 52563, 1),
-(4, 5, '5215411445614154', 'CASSLIRAIS SURAWAN', 'CASSLI', 1, 2, 2, 'YOGYAKARTA', '1983-06-15', 1, 1, '2017-01-18 16:39:48', 4, '2017-01-20 16:22:18', 1, 52562, 1),
+(3, 4, '5272031903820005', 'I PUTU DYATMIKA', 'MIKA', 1, 2, 2, 'MATARAM', '1982-03-19', 4, 1, '2017-01-18 16:38:49', 6, '2017-01-21 23:38:23', 1, 52563, 1),
+(4, 5, '5215411445614154', 'CASSLIRAIS SURAWAN', 'CASSLI', 1, 2, 2, 'YOGYAKARTA', '1983-06-15', 1, 1, '2017-01-18 16:39:48', 4, '2017-01-21 23:35:33', 1, 52562, 1),
 (5, 6, '5272036604820001', 'GUSTI KETUT INDRADEWI', 'INDRA', 2, 2, 2, 'GIANYAR', '1982-04-26', 4, 1, '2017-01-18 23:05:05', 4, '2017-01-19 16:28:05', 1, 52521, 1),
-(9, 7, '5106667777666675', 'HASAN BASRIL', 'HASAN', 1, 2, 2, 'JAKARTA', '1985-11-16', 1, 4, '2017-01-19 09:28:02', 4, '2017-01-20 15:36:16', 1, 52016, 2),
-(10, 9, '5271321561415156', 'JOKO PITOYO', 'JOKO', 1, 2, 2, 'JAKARTA', '2017-01-04', 1, 4, '2017-01-19 09:37:06', 4, '2017-01-20 16:24:49', 1, 52720, 2),
-(11, 10, '7238734263297166', 'LALU ANDRE LUKITO', 'ANDRE', 1, 1, 2, 'SELONG', '2011-03-10', 1, 4, '2017-01-19 15:30:32', NULL, NULL, 1, 52514, 1),
+(9, 7, '5106667777666675', 'HASAN BASRIL', 'HASAN', 1, 2, 2, 'JAKARTA', '1985-11-16', 1, 4, '2017-01-19 09:28:02', 4, '2017-01-21 23:18:21', 1, 52016, 2),
+(11, 10, '5202056766565665', 'LALU ANDRE LUKITO', 'ANDRE', 1, 1, 2, 'SELONG', '1981-07-09', 1, 4, '2017-01-19 15:30:32', 4, '2017-01-22 01:31:41', 1, 52514, 1),
 (12, 11, '5204677621345615', 'ISFY SUMBAWA', 'ISFY', 2, 1, 2, 'SUMBAWA BESAR', '1985-06-12', 1, 4, '2017-01-19 15:33:00', 4, '2017-01-20 15:47:52', 1, 52514, 1);
 
 -- --------------------------------------------------------
@@ -132,7 +131,7 @@ INSERT INTO `m_pegawai` (`peg_id`, `peg_user_no`, `peg_nik`, `peg_nama`, `peg_pa
 -- Table structure for table `peg_honorer`
 --
 
-CREATE TABLE `peg_honorer` (
+CREATE TABLE IF NOT EXISTS `peg_honorer` (
   `peg_id` int(8) NOT NULL,
   `peg_tmt` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -143,7 +142,7 @@ CREATE TABLE `peg_honorer` (
 -- Table structure for table `peg_pns`
 --
 
-CREATE TABLE `peg_pns` (
+CREATE TABLE IF NOT EXISTS `peg_pns` (
   `peg_id` int(8) NOT NULL,
   `peg_nip` varchar(18) NOT NULL,
   `peg_nip_lama` int(9) DEFAULT NULL,
@@ -161,11 +160,26 @@ CREATE TABLE `peg_pns` (
 --
 
 INSERT INTO `peg_pns` (`peg_id`, `peg_nip`, `peg_nip_lama`, `peg_gol_cpns`, `peg_tmt_cpns`, `peg_gol_pns`, `peg_tmt_pns`, `peg_jabatan`, `peg_tmt_jabatan`, `peg_pendidikan`) VALUES
-(3, '198203192004121002', 340017401, 31, '2004-12-01', 34, '2005-12-01', 1, '2013-01-11', 4),
-(4, '198311032011011008', 340054408, 31, '2011-01-01', 32, '2015-04-01', 2, '2017-01-25', 2),
-(5, '198204262004122001', 340017402, 31, '2004-12-01', 34, '2005-12-01', 1, '2013-01-11', 1),
-(9, '198511162010121006', 340054212, 31, '2010-12-01', 32, '2015-04-01', 1, '2016-03-22', 1),
-(10, '197511201997121002', 340015535, 22, '1997-12-01', 41, '2015-04-01', 1, '2017-01-19', 3);
+(3, '198203192004121002', 340017401, 31, '2004-12-01', 34, '2005-12-01', 1, '2013-01-11', 2),
+(4, '198311032011011008', 340054408, 31, '2011-01-01', 32, '2015-04-01', 2, '2015-01-27', 2),
+(9, '198511162010121006', 340054212, 31, '2010-12-01', 32, '2015-04-01', 1, '2016-03-22', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `surat_keluar`
+--
+
+CREATE TABLE IF NOT EXISTS `surat_keluar` (
+`surat_id` int(9) NOT NULL,
+  `surat_no` int(5) NOT NULL,
+  `surat_tanggal` date NOT NULL,
+  `surat_sifat` int(1) NOT NULL,
+  `surat_asal` int(5) NOT NULL,
+  `surat_tujuan` int(5) NOT NULL,
+  `surat_perihal` varchar(255) NOT NULL,
+  `surat_no_lengkap` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -173,7 +187,7 @@ INSERT INTO `peg_pns` (`peg_id`, `peg_nip`, `peg_nip_lama`, `peg_gol_cpns`, `peg
 -- Table structure for table `unitkerja`
 --
 
-CREATE TABLE `unitkerja` (
+CREATE TABLE IF NOT EXISTS `unitkerja` (
   `unit_kode` int(5) NOT NULL,
   `unit_nama` varchar(254) NOT NULL,
   `unit_parent` int(5) DEFAULT NULL,
@@ -239,8 +253,8 @@ INSERT INTO `unitkerja` (`unit_kode`, `unit_nama`, `unit_parent`, `unit_jenis`, 
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `user_no` int(8) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+`user_no` int(8) NOT NULL,
   `user_peg_id` int(8) DEFAULT NULL,
   `user_nama` varchar(100) NOT NULL,
   `user_id` varchar(20) NOT NULL,
@@ -254,7 +268,7 @@ CREATE TABLE `users` (
   `user_dibuat_waktu` datetime NOT NULL,
   `user_diupdate_oleh` int(5) DEFAULT NULL,
   `user_diupdate_waktu` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -262,13 +276,13 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_no`, `user_peg_id`, `user_nama`, `user_id`, `user_passwd`, `user_email`, `user_level`, `user_status`, `user_lastip`, `user_lastlogin`, `user_dibuat_oleh`, `user_dibuat_waktu`, `user_diupdate_oleh`, `user_diupdate_waktu`) VALUES
 (1, NULL, 'ADMIN SISTEM', 'admin', '032d66b893ad4d122ce8ff4510edbc85', 'admin@bpsntb.web.id', 3, 1, '192.168.1.9', '2017-01-19 05:10:33', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(4, 3, 'I PUTU DYATMIKA', 'mika', 'bb07f9e616e6f90eceb8bd9ceb659859', 'pdyatmika@gmail.com', 2, 1, '10.52.6.32', '2017-01-20 14:45:47', 1, '2017-01-18 15:18:57', 4, '2017-01-19 09:53:06'),
+(4, 3, 'I PUTU DYATMIKA', 'mika', 'bb07f9e616e6f90eceb8bd9ceb659859', 'pdyatmika@gmail.com', 2, 1, '192.168.1.9', '2017-01-22 10:38:33', 1, '2017-01-18 15:18:57', 4, '2017-01-19 09:53:06'),
 (5, 4, 'CASSLIRAIS SURAWAN', 'cassli', 'fa7382b1ba90d3fdbbc0fceaa4b97fd0', 'casslirais@bps.go.id', 1, 1, '', '0000-00-00 00:00:00', 1, '2017-01-18 15:19:45', 4, '2017-01-19 08:03:49'),
-(6, 5, 'GUSTI KETUT INDRADEWI', 'indradewi', '69e8b508e4008130652dc13a4cdb2c6f', 'indradewi@bps.go.id', 1, 1, '10.52.6.31', '2017-01-19 16:32:36', 1, '2017-01-18 23:04:08', 4, '2017-01-19 08:04:12'),
+(6, 5, 'GUSTI KETUT INDRADEWI', 'indradewi', '69e8b508e4008130652dc13a4cdb2c6f', 'indradewi@bps.go.id', 2, 1, '192.168.1.9', '2017-01-21 23:37:57', 1, '2017-01-18 23:04:08', 4, '2017-01-21 23:37:43'),
 (7, 9, 'HASAN BASRIL', 'hasan', 'c6143d4c7441b45854273f23c6edacb2', 'hasan@bps.go.id', 1, 1, '192.168.1.9', '2017-01-19 05:24:46', 1, '2017-01-19 00:09:57', 4, '2017-01-20 15:34:24'),
-(9, 10, 'JOKO PITOYO', 'joko', 'f97f8b3f076047e5dbd5d11d55dbc918', 'joko@bps.go.id', 1, 1, '', '0000-00-00 00:00:00', 4, '2017-01-19 09:36:28', NULL, NULL),
-(10, 11, 'LALU ANDRE LUKITO', 'andre', '0f095d0ab06624f6fec27baffb77a448', 'andre@gmail.com', 1, 1, '', '0000-00-00 00:00:00', 4, '2017-01-19 15:29:41', NULL, NULL),
-(11, 12, 'ISFY SUMBAWA', 'isfy', '2bc5b83479eaee76e9fb7b6868431ce3', 'isfy@gmail.com', 1, 1, '', '0000-00-00 00:00:00', 4, '2017-01-19 15:29:59', 4, '2017-01-20 15:47:52');
+(10, 11, 'LALU ANDRE LUKITO', 'andre', '0f095d0ab06624f6fec27baffb77a448', 'andre@gmail.com', 1, 1, '', '0000-00-00 00:00:00', 4, '2017-01-19 15:29:41', 4, '2017-01-22 01:31:41'),
+(11, 12, 'ISFY SUMBAWA', 'isfy', '2bc5b83479eaee76e9fb7b6868431ce3', 'isfy@gmail.com', 1, 1, '', '0000-00-00 00:00:00', 4, '2017-01-19 15:29:59', 4, '2017-01-20 15:47:52'),
+(14, NULL, 'INDRA SASMITA UTAMA', 'NDROO', '5def1341bafc706fb2e0c431d044b0a8', 'indrasasmita@bps.go.id', 1, 1, '', '0000-00-00 00:00:00', 6, '2017-01-22 00:18:36', 6, '2017-01-22 00:19:53');
 
 -- --------------------------------------------------------
 
@@ -276,7 +290,7 @@ INSERT INTO `users` (`user_no`, `user_peg_id`, `user_nama`, `user_id`, `user_pas
 -- Table structure for table `users_akses`
 --
 
-CREATE TABLE `users_akses` (
+CREATE TABLE IF NOT EXISTS `users_akses` (
   `user_no` int(9) NOT NULL,
   `akses` int(2) DEFAULT NULL,
   `pegawai` int(1) DEFAULT NULL,
@@ -294,49 +308,55 @@ CREATE TABLE `users_akses` (
 -- Indexes for table `ckp_satuan`
 --
 ALTER TABLE `ckp_satuan`
-  ADD PRIMARY KEY (`ckp_sat_id`);
+ ADD PRIMARY KEY (`ckp_sat_id`);
 
 --
 -- Indexes for table `m_gol`
 --
 ALTER TABLE `m_gol`
-  ADD PRIMARY KEY (`gol_kode`);
+ ADD PRIMARY KEY (`gol_kode`);
 
 --
 -- Indexes for table `m_pegawai`
 --
 ALTER TABLE `m_pegawai`
-  ADD PRIMARY KEY (`peg_id`) USING BTREE;
+ ADD PRIMARY KEY (`peg_id`) USING BTREE;
 
 --
 -- Indexes for table `peg_honorer`
 --
 ALTER TABLE `peg_honorer`
-  ADD PRIMARY KEY (`peg_id`);
+ ADD PRIMARY KEY (`peg_id`);
 
 --
 -- Indexes for table `peg_pns`
 --
 ALTER TABLE `peg_pns`
-  ADD PRIMARY KEY (`peg_id`);
+ ADD PRIMARY KEY (`peg_id`);
+
+--
+-- Indexes for table `surat_keluar`
+--
+ALTER TABLE `surat_keluar`
+ ADD PRIMARY KEY (`surat_id`);
 
 --
 -- Indexes for table `unitkerja`
 --
 ALTER TABLE `unitkerja`
-  ADD PRIMARY KEY (`unit_kode`);
+ ADD PRIMARY KEY (`unit_kode`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_no`) USING BTREE;
+ ADD PRIMARY KEY (`user_no`) USING BTREE;
 
 --
 -- Indexes for table `users_akses`
 --
 ALTER TABLE `users_akses`
-  ADD PRIMARY KEY (`user_no`);
+ ADD PRIMARY KEY (`user_no`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -346,17 +366,22 @@ ALTER TABLE `users_akses`
 -- AUTO_INCREMENT for table `ckp_satuan`
 --
 ALTER TABLE `ckp_satuan`
-  MODIFY `ckp_sat_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+MODIFY `ckp_sat_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `m_pegawai`
 --
 ALTER TABLE `m_pegawai`
-  MODIFY `peg_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+MODIFY `peg_id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `surat_keluar`
+--
+ALTER TABLE `surat_keluar`
+MODIFY `surat_id` int(9) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_no` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+MODIFY `user_no` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

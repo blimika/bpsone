@@ -9,6 +9,9 @@ elseif (($page=="master") && ($_SESSION['s_level'] >= 2)) {
 elseif ($page=="pegawai") {
 		include 'page/pegawai/m_pegawai.php';
 	}
+elseif ($page=="surat") {
+	include 'page/surat/m_surat.php';
+}
 elseif ($page=="unitkerja") {
 		include 'page/unitkerja/m_unitkerja.php';
 	}
