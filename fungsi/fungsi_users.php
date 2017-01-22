@@ -16,7 +16,23 @@ function get_idnama_users($user_no) {
 	return $nama_user;
 	$conn_users->close();
 	}
-
+function get_no_users_by_peg_id($peg_id) {
+	//(user_id) user_nama
+	$db_users = new db();
+	$conn_users = $db_users->connect();
+	$sql_users = $conn_users -> query("select * from users where user_peg_id='".$peg_id."'");
+	$cek=$sql_users->num_rows;
+	if ($cek>0) {
+	   $user_no='';
+	   $r=$sql_users->fetch_object();
+	   $user_no=$r->user_no;
+	}
+	else {
+	 $user_no='';
+	}
+	return $user_no;
+	$conn_users->close();
+	}
 function get_email_users($user_no) {
 	//(user_id) user_nama
 	$db_users = new db();

@@ -35,4 +35,6 @@ $ckpStatus=array(1=>'Draft',2=>'Diajukan',3=>'Disetujui',4=>'Ditolak');
 $ckpStatDok=array(0=>'Belum dientri',1=>'Pelaksana',2=>'Atasan',3=>'Sudah diproses');
 $JabatanPegawai=array(1=>'Kepala','Staf','KSK','Peltu');
 $JenisPendidikan=array(1=>'<=SMA','D-IV/S1','S2','S3');
+$SuratStatus=array(1=>'Draft',2=>'Belum disetujui',3=>'Sudah disetujui');
+$SuratTujuan=array(1=>'Internal BPS',2=>'Eksternal BPS');
 ?>

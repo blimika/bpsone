@@ -289,6 +289,13 @@ $(document).ready(function() {
                     message: 'Silakan pilih status'
                       }
                   }
+            },
+             pegawai_unitkode: {
+            validators: {
+                notEmpty: {
+                    message: 'Silakan pilih unit kerja'
+                      }
+                  }
             }
         }
     });

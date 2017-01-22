@@ -16,6 +16,23 @@ function get_peg_id($user_no) {
 	return $peg_id;
 	$conn_peg->close();
 	}
+function get_peg_id_by_nik($peg_nik) {
+	//(user_id) kode_jabtan
+	$db_peg = new db();
+	$conn_peg = $db_peg->connect();
+	$sql_peg = $conn_peg -> query("select * from m_pegawai where peg_nik='".$peg_nik."'");
+	$cek=$sql_peg->num_rows;
+	if ($cek>0) {
+	   $peg_id='';
+	   $r=$sql_peg->fetch_object();
+	   $peg_id=$r->peg_id;
+	}
+	else {
+	 $peg_id='';
+	}
+	return $peg_id;
+	$conn_peg->close();
+	}
 function get_jabatan_pegawai($pegawai_id) {
 	//(user_id) kode_jabtan
 	$db_users = new db();
